@@ -1,6 +1,9 @@
-package com.han.wanandroid.mvp.view;
+package com.han.wanandroid.view;
 
 import com.han.wanandroid.base.IBaseView;
+import com.han.wanandroid.model.pojo.ArticleBean;
+
+import java.util.List;
 
 /**
  * Created by hans
@@ -9,4 +12,6 @@ import com.han.wanandroid.base.IBaseView;
  */
 
 public interface IRecommendView extends IBaseView {
+
+    void loadRecycler(List<ArticleBean> list);
 }

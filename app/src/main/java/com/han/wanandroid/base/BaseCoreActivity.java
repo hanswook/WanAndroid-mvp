@@ -11,9 +11,9 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.han.wanandroid.R;
-import com.han.wanandroid.customview.CustomDialog;
-import com.han.wanandroid.customview.CustomProgressDialog;
-import com.han.wanandroid.customview.CustomProgressDialogHelper;
+import com.han.wanandroid.tools.CustomDialog;
+import com.han.wanandroid.tools.CustomProgressDialog;
+import com.han.wanandroid.tools.CustomProgressDialogHelper;
 import com.han.wanandroid.utils.ToastUtils;
 
 /**

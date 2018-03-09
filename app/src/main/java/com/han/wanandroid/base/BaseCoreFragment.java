@@ -1,14 +1,15 @@
 package com.han.wanandroid.base;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.han.wanandroid.customview.CustomProgressDialog;
-import com.han.wanandroid.customview.CustomProgressDialogHelper;
+import com.han.wanandroid.tools.CustomProgressDialog;
+import com.han.wanandroid.tools.CustomProgressDialogHelper;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -22,7 +23,8 @@ import butterknife.Unbinder;
 public abstract class BaseCoreFragment<T extends BasePresenter> extends BaseRxFragment {
     protected View rootView;
     protected LayoutInflater inflater;
-    protected Activity context;
+    protected Activity activity;
+    protected Context context;
     private CustomProgressDialog mProgressDialog;
     private Unbinder unbinder;
 
@@ -39,6 +41,8 @@ public abstract class BaseCoreFragment<T extends BasePresenter> extends BaseRxFr
         if (rootView == null) {
             rootView = inflater.inflate(this.getLayoutId(), container, false);
         }
+        activity=getActivity();
+        context=getContext();
         TAG = this.getClass().getSimpleName();
         unbinder = ButterKnife.bind(this, rootView);
         mPresenter = loadPresenter();

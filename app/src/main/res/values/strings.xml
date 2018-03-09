@@ -7,5 +7,31 @@
     <string name="article_fragment">articlefragment</string>
     <string name="usercenter_fragment">usercenterfragment</string>
 
+    <!--http exception-->
+    <string name="connect_error">网络连接失败,请检查网络</string>
+    <string name="connect_timeout">连接超时,请稍后再试</string>
+    <string name="bad_network">服务器异常</string>
+    <string name="parse_error">解析服务器响应数据失败</string>
+    <string name="unknown_error">未知错误</string>
+    <string name="response_return_error">服务器返回数据失败</string>
+
+
+
+    <string name="tab_left">&#xe620; </string> <!--左对齐-->
+    <string name="tab_right">&#xe618; </string> <!--右对齐-->
+    <string name="ic_hot">&#xe66d; </string> <!--火-->
+    <string name="ic_return">&#xe6e5; </string> <!--返回-->
+    <string name="ic_share">&#xe66c; </string> <!--分享-->
+    <string name="ic_search">&#xe6a8; </string> <!--搜索-->
+    <string name="ic_collect_nor">&#xe63c; </string> <!--未收藏-->
+    <string name="ic_collect_sel">&#xe63b; </string> <!--已收藏-->
+    <string name="ic_about">&#xe7ca; </string> <!--关于-->
+    <string name="ic_close">&#xe80b; </string> <!--关闭的叉-->
+    <string name="ic_home">&#xe611; </string> <!--首页-->
+    <string name="ic_type">&#xe654; </string> <!--分类-->
+    <string name="ic_user">&#xe652; </string> <!--用户-->
+    <string name="ic_more">&#xe62b; </string> <!--更多-->
+
+
 
 </resources>

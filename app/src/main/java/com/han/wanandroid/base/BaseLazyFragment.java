@@ -22,7 +22,6 @@ public abstract class BaseLazyFragment<T extends BasePresenter> extends BaseCore
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        LogUtils.e(TAG,"setUserVisibleHint :"+isVisibleToUser);
         mIsVisibleToUser = isVisibleToUser;
         initFetchData();
     }
@@ -35,7 +34,6 @@ public abstract class BaseLazyFragment<T extends BasePresenter> extends BaseCore
     }
 
     private void initFetchData() {
-        LogUtils.e(TAG, "initFetchData mIsViewInitiated：" + mIsViewInitiated + ",mIsVisibleToUser:" + mIsVisibleToUser + ",mIsDataInitiated:" + mIsDataInitiated);
         if (mIsVisibleToUser && mIsViewInitiated && !mIsDataInitiated) {
             fetchData();
             mIsDataInitiated = true;
@@ -43,4 +41,9 @@ public abstract class BaseLazyFragment<T extends BasePresenter> extends BaseCore
     }
 
     protected abstract void fetchData();
+
+    @Override
+    protected void init() {
+
+    }
 }

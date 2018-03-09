@@ -1,32 +1,46 @@
 package com.han.wanandroid.ui.fragment;
 
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.han.wanandroid.R;
 import com.han.wanandroid.base.BaseLazyFragment;
-import com.han.wanandroid.mvp.presenter.UserCenterPresenter;
-import com.han.wanandroid.utils.LogUtils;
+import com.han.wanandroid.presenter.UserCenterPresenter;
+import com.han.wanandroid.net.DefaultObserver;
+
+import java.util.concurrent.TimeUnit;
+
+import butterknife.BindView;
+import io.reactivex.Observable;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class UserCenterFragment extends BaseLazyFragment<UserCenterPresenter> {
 
+    @BindView(R.id.uc_text_first)
+    TextView ucTextFirst;
 
     public UserCenterFragment() {
-        // Required empty public constructor
     }
 
 
     @Override
     protected void fetchData() {
-        LogUtils.e(TAG,"fetchData UserCenterFragment");
+        ucTextFirst.setText("ucTextFirst fetchData");
+        show();
+    }
 
+    private void show() {
+        showProgress();
+        Observable.timer(1, TimeUnit.SECONDS)
+                .subscribe(new DefaultObserver<Long>(this) {
+                    @Override
+                    protected void doOnNext(Long aLong) {
+                        dismissProgress();
+                    }
+                });
     }
 
     @Override
@@ -39,9 +53,4 @@ public class UserCenterFragment extends BaseLazyFragment<UserCenterPresenter> {
         return R.layout.fragment_user_center;
     }
 
-    @Override
-    protected void init() {
-        LogUtils.e(TAG,"init UserCenterFragment");
-
-    }
 }

@@ -1,7 +1,7 @@
-package com.han.wanandroid.mvp.presenter;
+package com.han.wanandroid.presenter;
 
 import com.han.wanandroid.base.BasePresenter;
-import com.han.wanandroid.mvp.view.IUserCenterView;
+import com.han.wanandroid.view.IUserCenterView;
 
 /**
  * Created by hans

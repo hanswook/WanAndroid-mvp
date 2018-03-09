@@ -1,16 +1,16 @@
 package com.han.wanandroid.ui.fragment;
 
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.han.wanandroid.R;
 import com.han.wanandroid.base.BaseLazyFragment;
-import com.han.wanandroid.mvp.presenter.ArticlePresenter;
+import com.han.wanandroid.presenter.ArticlePresenter;
 import com.han.wanandroid.utils.LogUtils;
+
+import butterknife.BindView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,10 +18,11 @@ import com.han.wanandroid.utils.LogUtils;
 public class ArticlesFragment extends BaseLazyFragment<ArticlePresenter> {
 
 
-    public ArticlesFragment() {
-        // Required empty public constructor
-    }
+    @BindView(R.id.article_recycler)
+    RecyclerView articleRecycler;
 
+    public ArticlesFragment() {
+    }
 
     @Override
     protected ArticlePresenter loadPresenter() {
@@ -33,15 +34,14 @@ public class ArticlesFragment extends BaseLazyFragment<ArticlePresenter> {
         return R.layout.fragment_articles;
     }
 
-    @Override
-    protected void init() {
-        LogUtils.e(TAG,"init ArticlesFragment");
-
-    }
 
     @Override
     protected void fetchData() {
-        LogUtils.e(TAG,"fetchData ArticlesFragment");
-
+        LogUtils.e(TAG, "fetchData ArticlesFragment");
+        initRecycler();
     }
+
+    private void initRecycler() {
+    }
+
 }
