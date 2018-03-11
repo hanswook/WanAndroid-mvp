@@ -20,17 +20,16 @@ import com.han.wanandroid.view.IRecommendView;
 public class RecommendPresenter extends BasePresenter<IRecommendView> {
 
 
-    public void getData(){
-        LogUtils.e("RecommendPresenter","getdata");
+    public void getData(int pageIndex) {
+        LogUtils.e("RecommendPresenter", "getdata");
         RetrofitManager.getInstance().create(WanApi.class)
-                .getArticleList(0)
+                .getArticleList(pageIndex)
                 .compose(RxUtils.<ResponseBean<DataBean<ArticleBean>>>applySchedulers())
                 .subscribe(new DefaultObserver<ResponseBean<DataBean<ArticleBean>>>(mView) {
                     @Override
                     protected void doOnNext(ResponseBean<DataBean<ArticleBean>> dataBeanResponseBean) {
-                        mView.loadRecycler(dataBeanResponseBean.getData().getDatas());
+                        mView.loadMore(dataBeanResponseBean.getData().getDatas());
                     }
                 });
     }
-
 }

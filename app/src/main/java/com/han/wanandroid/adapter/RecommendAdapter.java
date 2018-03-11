@@ -18,7 +18,6 @@ import java.util.List;
 
 public class RecommendAdapter extends BaseQuickAdapter<ArticleBean, BaseViewHolder> {
 
-    private List<ArticleBean> datas;
 
     public RecommendAdapter(int layoutResId, @Nullable List<ArticleBean> data) {
         super(layoutResId, data);

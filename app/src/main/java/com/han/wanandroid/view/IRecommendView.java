@@ -13,5 +13,8 @@ import java.util.List;
 
 public interface IRecommendView extends IBaseView {
 
-    void loadRecycler(List<ArticleBean> list);
+    void loadMore(List<ArticleBean> list);
+
+
+
 }

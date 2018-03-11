@@ -9,9 +9,11 @@ package com.han.wanandroid.base;
 public abstract class BasePresenter<T extends IBaseView> {
 
     protected T mView;
+    protected String TAG;
 
     protected void attachView(T mView) {
         this.mView = mView;
+        TAG = getClass().getSimpleName();
     }
 
     protected void dettachView() {

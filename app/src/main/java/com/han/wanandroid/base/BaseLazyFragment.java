@@ -15,9 +15,9 @@ import com.han.wanandroid.utils.LogUtils;
 
 public abstract class BaseLazyFragment<T extends BasePresenter> extends BaseCoreFragment<T> {
 
-    protected boolean mIsViewInitiated;
-    protected boolean mIsVisibleToUser;
-    protected boolean mIsDataInitiated;
+    private boolean mIsViewInitiated;
+    private boolean mIsVisibleToUser;
+    private boolean mIsDataInitiated;
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {

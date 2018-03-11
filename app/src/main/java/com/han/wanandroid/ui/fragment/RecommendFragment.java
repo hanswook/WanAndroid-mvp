@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.han.wanandroid.R;
 import com.han.wanandroid.adapter.RecommendAdapter;
 import com.han.wanandroid.base.BaseLazyFragment;
@@ -32,6 +33,7 @@ public class RecommendFragment extends BaseLazyFragment<RecommendPresenter> impl
     private List<ArticleBean> datas;
 
     private RecommendAdapter recommendAdapter;
+    private int pageIndex = 0;
 
     public RecommendFragment() {
     }
@@ -58,13 +60,24 @@ public class RecommendFragment extends BaseLazyFragment<RecommendPresenter> impl
         recommendAdapter = new RecommendAdapter(R.layout.recommend_recycler_item_layout, datas);
         recommendRecycler.setAdapter(recommendAdapter);
         recommendRecycler.setLayoutManager(new LinearLayoutManager(context));
-        mPresenter.getData();
+        mPresenter.getData(pageIndex);
+        recommendAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
+                LogUtils.e(TAG, "onLoadMoreRequested");
+                mPresenter.getData(pageIndex);
+            }
+        }, recommendRecycler);
     }
 
 
     @Override
-    public void loadRecycler(List<ArticleBean> list) {
-        LogUtils.e(TAG, "loadRecycler");
+    public void loadMore(List<ArticleBean> list) {
+        pageIndex++;
+        LogUtils.e(TAG, "loadMore");
         recommendAdapter.addData(list);
+        recommendAdapter.loadMoreComplete();
     }
+
+
 }
