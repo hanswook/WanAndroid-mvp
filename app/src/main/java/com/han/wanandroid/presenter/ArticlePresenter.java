@@ -42,12 +42,14 @@ public class ArticlePresenter extends BasePresenter<IArticleView> {
     }
 
     public void getRecyclerData(int treeId){
+        LogUtils.e(TAG,"treeId:"+treeId);
         RetrofitManager.getInstance().create(WanApi.class)
                 .getTreeDetailList(0, treeId)
                 .compose(RxUtils.<ResponseBean<DataBean<ArticleBean>>>applySchedulers())
                 .subscribe(new DefaultObserver<ResponseBean<DataBean<ArticleBean>>>(mView) {
                     @Override
                     protected void doOnNext(ResponseBean<DataBean<ArticleBean>> dataBeanResponseBean) {
+
                         if (ObjectUtils.isEmpty(dataBeanResponseBean)) {
                             return;
                         }

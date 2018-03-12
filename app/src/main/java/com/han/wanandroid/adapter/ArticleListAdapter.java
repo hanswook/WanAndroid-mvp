@@ -16,10 +16,10 @@ import java.util.List;
  * e-mail: hxxx1992@163.com
  */
 
-public class RecommendAdapter extends BaseQuickAdapter<ArticleBean, BaseViewHolder> {
+public class ArticleListAdapter extends BaseQuickAdapter<ArticleBean, BaseViewHolder> {
 
 
-    public RecommendAdapter(int layoutResId, @Nullable List<ArticleBean> data) {
+    public ArticleListAdapter(int layoutResId, @Nullable List<ArticleBean> data) {
         super(layoutResId, data);
     }
 

@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.han.wanandroid.R;
-import com.han.wanandroid.adapter.RecommendAdapter;
+import com.han.wanandroid.adapter.ArticleListAdapter;
 import com.han.wanandroid.base.BaseLazyFragment;
 import com.han.wanandroid.model.pojo.ArticleBean;
 import com.han.wanandroid.model.pojo.TreeBean;
@@ -48,7 +48,7 @@ public class ArticlesFragment extends BaseLazyFragment<ArticlePresenter> impleme
     private List<TreeBean<TreeBean>> TabsData;
     private List<ArticleBean> listData;
 
-    private RecommendAdapter recommendAdapter;
+    private ArticleListAdapter articleListAdapter;
 
 
     public ArticlesFragment() {
@@ -69,8 +69,8 @@ public class ArticlesFragment extends BaseLazyFragment<ArticlePresenter> impleme
     protected void fetchData() {
         initData();
         LogUtils.e(TAG, "fetchData ArticlesFragment");
-        initTabs();
         initRecycler();
+        initTabs();
     }
 
     private void initData() {
@@ -93,38 +93,25 @@ public class ArticlesFragment extends BaseLazyFragment<ArticlePresenter> impleme
 
     private void initRecycler() {
         listData = new ArrayList<>();
-        recommendAdapter = new RecommendAdapter(R.layout.recommend_recycler_item_layout, datas);
-        recommendRecycler.setAdapter(recommendAdapter);
-        recommendRecycler.setLayoutManager(new LinearLayoutManager(context));
-        mPresenter.getData(pageIndex);
-        recommendAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
-            @Override
-            public void onLoadMoreRequested() {
-                LogUtils.e(TAG, "onLoadMoreRequested");
-                mPresenter.getData(pageIndex);
-            }
-        }, recommendRecycler);
+        articleListAdapter = new ArticleListAdapter(R.layout.recommend_recycler_item_layout, listData);
+        articleRecycler.setAdapter(articleListAdapter);
+        articleRecycler.setLayoutManager(new LinearLayoutManager(context));
+
     }
 
-
-    @Override
-    public void loadMore(List<ArticleBean> list) {
-        LogUtils.e(TAG, "loadMore");
-        recommendAdapter.addData(list);
-        recommendAdapter.loadMoreComplete();
-    }
 
     @Override
     public void loadRecyclerData(List<ArticleBean> datas) {
-        listData.clear();
-
-        listData.addAll(datas);
+        LogUtils.e(TAG, "loadRecyclerData:"+datas.size());
+        articleListAdapter.setNewData(datas);
+        articleListAdapter.notifyDataSetChanged();
     }
 
     private void initPrimaryTabLayout() {
         for (int i = 0; i < TabsData.size(); i++) {
             articleTab.addTab(articleTab.newTab().setText(TabsData.get(i).getName()));
         }
+        mPresenter.getRecyclerData(TabsData.get(0).getChildren().get(0).getId());
     }
 
 
