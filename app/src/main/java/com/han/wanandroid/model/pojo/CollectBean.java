@@ -2,7 +2,6 @@ package com.han.wanandroid.model.pojo;
 
 /**
  * Created by hans
- * date: 2018/2/27 16:48.
  * e-mail: hxxx1992@163.com
  */
 

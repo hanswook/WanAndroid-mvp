@@ -32,6 +32,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements IHomeVi
 
     @Override
     protected void init() {
+        mPresenter.defaultLogin();
         RecommendFragment recommendFragment = new RecommendFragment();
         ArticlesFragment recommendFragment2 = new ArticlesFragment();
         UserCenterFragment recommendFragment3 = new UserCenterFragment();

@@ -16,7 +16,6 @@
     <string name="response_return_error">服务器返回数据失败</string>
 
 
-
     <string name="tab_left">&#xe620; </string> <!--左对齐-->
     <string name="tab_right">&#xe618; </string> <!--右对齐-->
     <string name="ic_hot">&#xe66d; </string> <!--火-->
@@ -32,6 +31,22 @@
     <string name="ic_user">&#xe652; </string> <!--用户-->
     <string name="ic_more">&#xe62b; </string> <!--更多-->
 
+
+    <string name="uc_default_nickname">默认昵称</string>
+    <string name="uc_collection">我的收藏</string>
+    <string name="uc_about">关于我</string>
+    <string name="uc_sign">登录</string>
+    <string name="uc_signout">退出登录</string>
+
+
+    <string name="login_btn_click">登录</string>
+    <string name="login_hint_account">请输入帐户名</string>
+    <string name="login_text_account">账号：</string>
+    <string name="login_hint_password">请输入密码</string>
+    <string name="login_text_password">密码：</string>
+
+    <string name="email">hxxx1992@163.com</string>
+    <string name="about_text">demo版本，感谢对项目的支持和关注,项目会不断的升级更新,如果小主感兴趣欢迎一起来贡献,有好的想法也可以随时发email给我.</string>
 
 
 </resources>

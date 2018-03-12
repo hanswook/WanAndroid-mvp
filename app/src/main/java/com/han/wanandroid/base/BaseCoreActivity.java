@@ -18,7 +18,6 @@ import com.han.wanandroid.utils.ToastUtils;
 
 /**
  * Created by hans
- * date: 2018/3/8 13:57.
  * e-mail: hxxx1992@163.com
  */
 

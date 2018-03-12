@@ -20,7 +20,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends BaseCoreActi
     protected Context context;
     protected String TAG;
 
-    private T mPresenter;
+    protected T mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -12,7 +12,6 @@ import okhttp3.Interceptor;
 
 /**
  * Created by hans
- * date: 2018/2/27 16:27.
  * e-mail: hxxx1992@163.com
  */
 

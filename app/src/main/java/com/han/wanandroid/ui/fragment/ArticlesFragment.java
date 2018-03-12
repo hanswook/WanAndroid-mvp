@@ -33,14 +33,6 @@ public class ArticlesFragment extends BaseLazyFragment<ArticlePresenter> impleme
 
     @BindView(R.id.article_recycler)
     RecyclerView articleRecycler;
-    @BindView(R.id.article_return)
-    IconFontTextView articleReturn;
-    @BindView(R.id.article_title)
-    TextView articleTitle;
-    @BindView(R.id.article_topbar_layout)
-    RelativeLayout articleTopbarLayout;
-    @BindView(R.id.article_llayout)
-    CoordinatorLayout articleLlayout;
     @BindView(R.id.article_tab)
     TabLayout articleTab;
 

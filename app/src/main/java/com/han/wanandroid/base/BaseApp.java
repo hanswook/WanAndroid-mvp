@@ -13,7 +13,6 @@ import com.tencent.bugly.crashreport.CrashReport;
 
 /**
  * Created by hans
- * date: 2018/3/8 14:13.
  * e-mail: hxxx1992@163.com
  */
 

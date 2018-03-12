@@ -22,7 +22,6 @@ import retrofit2.http.Query;
 
 /**
  * Created by hans
- * date: 2018/2/27 14:33.
  * e-mail: hxxx1992@163.com
  */
 

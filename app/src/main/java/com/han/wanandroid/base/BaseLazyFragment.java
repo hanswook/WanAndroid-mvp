@@ -8,7 +8,6 @@ import com.han.wanandroid.utils.LogUtils;
 
 /**
  * Created by hans
- * date: 2018/3/8 20:01.
  * e-mail: hxxx1992@163.com
  * note：懒加载fragment目前适用于viewpager配合。
  */

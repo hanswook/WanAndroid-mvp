@@ -8,7 +8,6 @@ import io.reactivex.disposables.Disposable;
 
 /**
  * Created by hans
- * date: 2018/3/8 13:44.
  * e-mail: hxxx1992@163.com
  */
 

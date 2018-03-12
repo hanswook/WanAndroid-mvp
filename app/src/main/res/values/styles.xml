@@ -47,4 +47,17 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
+    <!--半透明activity-->
+    <style name="AppTheme.Translucent">
+        <!--背景颜色及和透明程度-->
+        <item name="android:windowBackground">@color/aLightGray</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <!--<item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
+    </style>
+
 </resources>

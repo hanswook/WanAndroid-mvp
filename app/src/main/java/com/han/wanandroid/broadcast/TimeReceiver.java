@@ -8,7 +8,6 @@ import com.han.wanandroid.utils.LogUtils;
 
 /**
  * Created by hans
- * date: 2018/3/9 15:05.
  * e-mail: hxxx1992@163.com
  */
 

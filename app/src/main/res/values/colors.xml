@@ -29,5 +29,7 @@
     <color name="a88_green">#8800ff00</color>
     <color name="a88_yellow">#88ffff00</color>
     <color name="a88_purple">#88ff00ff</color>
+    <color name="a88_dee_ppurple">#88673AB7</color>
+
 
 </resources>

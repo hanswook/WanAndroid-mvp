@@ -12,7 +12,6 @@ import java.util.List;
 
 /**
  * Created by hans
- * date: 2018/3/9 17:39.
  * e-mail: hxxx1992@163.com
  */
 
@@ -30,6 +29,10 @@ public class ArticleListAdapter extends BaseQuickAdapter<ArticleBean, BaseViewHo
         helper.setText(R.id.recommend_item_text_author, item.getAuthor());
         helper.setText(R.id.recommend_item_text_chaptername, item.getChapterName());
         helper.setText(R.id.recommend_item_text_nicedate, item.getNiceDate());
-        helper.setText(R.id.recommend_item_text_collect, mContext.getResources().getString(R.string.ic_collect_nor));
+        if (item.isCollect()) {
+            helper.setText(R.id.recommend_item_text_collect, mContext.getResources().getString(R.string.ic_collect_sel));
+        } else {
+            helper.setText(R.id.recommend_item_text_collect, mContext.getResources().getString(R.string.ic_collect_nor));
+        }
     }
 }
