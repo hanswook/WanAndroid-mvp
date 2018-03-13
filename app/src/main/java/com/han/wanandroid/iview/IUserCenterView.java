@@ -1,4 +1,4 @@
-package com.han.wanandroid.view;
+package com.han.wanandroid.iview;
 
 import com.han.wanandroid.base.IBaseView;
 

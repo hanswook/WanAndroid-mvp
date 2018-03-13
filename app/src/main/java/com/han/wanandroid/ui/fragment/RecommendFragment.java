@@ -12,7 +12,7 @@ import com.han.wanandroid.base.BaseLazyFragment;
 import com.han.wanandroid.model.pojo.ArticleBean;
 import com.han.wanandroid.presenter.RecommendPresenter;
 import com.han.wanandroid.utils.LogUtils;
-import com.han.wanandroid.view.IRecommendView;
+import com.han.wanandroid.iview.IRecommendView;
 
 import java.util.ArrayList;
 import java.util.List;

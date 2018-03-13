@@ -9,7 +9,7 @@ import com.han.wanandroid.net.RetrofitManager;
 import com.han.wanandroid.net.WanApi;
 import com.han.wanandroid.utils.LogUtils;
 import com.han.wanandroid.utils.RxUtils;
-import com.han.wanandroid.view.IRecommendView;
+import com.han.wanandroid.iview.IRecommendView;
 
 /**
  * Created by hans

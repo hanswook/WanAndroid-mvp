@@ -7,7 +7,7 @@ import com.han.wanandroid.R;
 import com.han.wanandroid.adapter.HomeFragmentPagerAdapter;
 import com.han.wanandroid.base.BaseActivity;
 import com.han.wanandroid.presenter.HomePresenter;
-import com.han.wanandroid.view.IHomeView;
+import com.han.wanandroid.iview.IHomeView;
 import com.han.wanandroid.ui.fragment.ArticlesFragment;
 import com.han.wanandroid.ui.fragment.RecommendFragment;
 import com.han.wanandroid.ui.fragment.UserCenterFragment;

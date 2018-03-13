@@ -1,7 +1,6 @@
 package com.han.wanandroid.presenter;
 
 import com.han.wanandroid.base.BasePresenter;
-import com.han.wanandroid.base.IBaseView;
 import com.han.wanandroid.model.pojo.ArticleBean;
 import com.han.wanandroid.model.pojo.DataBean;
 import com.han.wanandroid.model.pojo.ResponseBean;
@@ -9,12 +8,10 @@ import com.han.wanandroid.model.pojo.TreeBean;
 import com.han.wanandroid.net.DefaultObserver;
 import com.han.wanandroid.net.RetrofitManager;
 import com.han.wanandroid.net.WanApi;
-import com.han.wanandroid.utils.CollectionUtils;
 import com.han.wanandroid.utils.LogUtils;
 import com.han.wanandroid.utils.ObjectUtils;
 import com.han.wanandroid.utils.RxUtils;
-import com.han.wanandroid.utils.Utils;
-import com.han.wanandroid.view.IArticleView;
+import com.han.wanandroid.iview.IArticleView;
 
 import java.util.List;
 

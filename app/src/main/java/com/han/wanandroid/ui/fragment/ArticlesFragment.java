@@ -1,15 +1,11 @@
 package com.han.wanandroid.ui.fragment;
 
 
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.han.wanandroid.R;
 import com.han.wanandroid.adapter.ArticleListAdapter;
 import com.han.wanandroid.base.BaseLazyFragment;
@@ -17,8 +13,7 @@ import com.han.wanandroid.model.pojo.ArticleBean;
 import com.han.wanandroid.model.pojo.TreeBean;
 import com.han.wanandroid.presenter.ArticlePresenter;
 import com.han.wanandroid.utils.LogUtils;
-import com.han.wanandroid.view.IArticleView;
-import com.han.wanandroid.widget.IconFontTextView;
+import com.han.wanandroid.iview.IArticleView;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -16,7 +16,7 @@ import com.han.wanandroid.ui.activity.LoginActivity;
 import com.han.wanandroid.utils.Constant;
 import com.han.wanandroid.utils.LogUtils;
 import com.han.wanandroid.utils.SPUtils;
-import com.han.wanandroid.view.IUserCenterView;
+import com.han.wanandroid.iview.IUserCenterView;
 
 import java.util.concurrent.TimeUnit;
 
@@ -93,12 +93,11 @@ public class UserCenterFragment extends BaseLazyFragment<UserCenterPresenter> im
         if (loginStatus) {
             ucTextName.setText(SPUtils.getString(Constant.LOGIN_USER_NAME));
             ucTextLogin.setText("退出登录");
-            Constant.isLogin=false;
-            SPUtils.put(Constant.LOGIN_USER_NAME,"");
-            SPUtils.put(Constant.LOGIN_USER_PASSWORD,"");
         } else {
             ucTextName.setText(getResources().getString(R.string.uc_default_nickname));
             ucTextLogin.setText("登录");
+            SPUtils.put(Constant.LOGIN_USER_NAME, "");
+            SPUtils.put(Constant.LOGIN_USER_PASSWORD, "");
         }
     }
 
