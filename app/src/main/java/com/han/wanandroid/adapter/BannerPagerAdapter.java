@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 
+import com.han.wanandroid.interfaces.OnItemClickListener;
 import com.han.wanandroid.utils.LogUtils;
 
 import java.util.List;
@@ -24,6 +25,8 @@ public class BannerPagerAdapter extends PagerAdapter {
 
     private List<ImageView> datas;
 
+    private OnItemClickListener listener;
+
     @Override
     public int getCount() {
         return Integer.MAX_VALUE;
@@ -37,16 +40,31 @@ public class BannerPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        LogUtils.e("pageadapter","instantiateItem position:"+position);
+        LogUtils.e("pageadapter", "instantiateItem position:" + position);
         // 把position对应位置的ImageView添加到ViewPager中
         ImageView iv = datas.get(position % datas.size());
+        final int nowPosition = position % datas.size();
+        iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //回调
+                if (listener != null) {
+                    listener.onItemClick(nowPosition);
+                }
+            }
+        });
         container.addView(iv);
         return iv;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        LogUtils.e("pageadapter","destroyItem position:"+position);
+        LogUtils.e("pageadapter", "destroyItem position:" + position);
         container.removeView(datas.get(position % datas.size()));
+    }
+
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener){
+        this.listener=onItemClickListener;
     }
 }
