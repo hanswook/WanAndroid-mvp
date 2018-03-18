@@ -16,6 +16,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
@@ -61,6 +66,8 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:8.5.1"
     //brvah
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'
+
+    compile(name: "simplebanner", ext: "aar");
 
 }
 

@@ -5,6 +5,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.han.wanandroid.R;
 import com.han.wanandroid.adapter.ArticleListAdapter;
@@ -30,6 +31,8 @@ public class ArticlesFragment extends BaseLazyFragment<ArticlePresenter> impleme
     RecyclerView articleRecycler;
     @BindView(R.id.article_tab)
     TabLayout articleTab;
+    @BindView(R.id.article_flow)
+    TabLayout articleFlow;
 
 
     private List<TreeBean<TreeBean>> TabsData;
@@ -89,7 +92,7 @@ public class ArticlesFragment extends BaseLazyFragment<ArticlePresenter> impleme
 
     @Override
     public void loadRecyclerData(List<ArticleBean> datas) {
-        LogUtils.e(TAG, "loadRecyclerData:"+datas.size());
+        LogUtils.e(TAG, "loadRecyclerData:" + datas.size());
         articleListAdapter.setNewData(datas);
         articleListAdapter.notifyDataSetChanged();
     }
@@ -101,5 +104,13 @@ public class ArticlesFragment extends BaseLazyFragment<ArticlePresenter> impleme
         mPresenter.getRecyclerData(TabsData.get(0).getChildren().get(0).getId());
     }
 
+
+    private void showFlow() {
+        articleFlow.setVisibility(View.VISIBLE);
+    }
+
+    public void hideFlow() {
+        articleFlow.setVisibility(View.INVISIBLE);
+    }
 
 }

@@ -18,7 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".ui.activity.HomeActivity">
+        <activity
+            android:name=".ui.activity.HomeActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,7 +37,8 @@
         </receiver>
 
         <activity android:name=".ui.activity.CollectiionActivity" />
-        <activity android:name=".ui.activity.AboutActivity"
+        <activity
+            android:name=".ui.activity.AboutActivity"
             android:parentActivityName=".ui.activity.HomeActivity"
             android:theme="@style/AppTheme.Translucent">
             <meta-data

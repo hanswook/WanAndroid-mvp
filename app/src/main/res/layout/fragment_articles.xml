@@ -25,6 +25,15 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <com.han.wanandroid.widget.FlowLayout
+            android:id="@+id/article_flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/a88_gray"
+            android:visibility="invisible">
+
+        </com.han.wanandroid.widget.FlowLayout>
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/article_recycler"
             android:layout_width="match_parent"
@@ -32,41 +41,4 @@
 
         </android.support.v7.widget.RecyclerView>
     </FrameLayout>
-</android.support.design.widget.CoordinatorLayout><!--<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone"
-                app:layout_scrollFlags="scroll|enterAlways">
-
-                <RelativeLayout
-                    android:id="@+id/article_topbar_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/colorPrimary">
-
-                    <com.han.wanandroid.widget.IconFontTextView
-                        android:id="@+id/article_return"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="5px"
-                        android:gravity="center"
-                        android:text="@string/ic_return"
-                        android:textColor="@color/white"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:id="@+id/article_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginLeft="120px"
-                        android:layout_marginRight="120px"
-                        android:maxLines="1"
-                        android:textColor="@color/white"
-                        android:textSize="25sp" />
-
-
-                </RelativeLayout>
-
-            </LinearLayout>-->
+</android.support.design.widget.CoordinatorLayout>
