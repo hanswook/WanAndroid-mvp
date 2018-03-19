@@ -27,10 +27,10 @@ public class RecommendPresenter extends BasePresenter<IRecommendView> {
         RetrofitManager.getInstance().create(WanApi.class)
                 .getArticleList(pageIndex)
                 .compose(RxUtils.<ResponseBean<DataBean<ArticleBean>>>applySchedulers())
-                .subscribe(new DefaultObserver<ResponseBean<DataBean<ArticleBean>>>(mView) {
+                .subscribe(new DefaultObserver<ResponseBean<DataBean<ArticleBean>>>(getmView()) {
                     @Override
                     protected void doOnNext(ResponseBean<DataBean<ArticleBean>> dataBeanResponseBean) {
-                        mView.loadMore(dataBeanResponseBean.getData().getDatas());
+                        getmView().loadMore(dataBeanResponseBean.getData().getDatas());
                     }
                 });
     }
@@ -39,10 +39,10 @@ public class RecommendPresenter extends BasePresenter<IRecommendView> {
         RetrofitManager.getInstance().create(WanApi.class)
                 .getBannerList()
                 .compose(RxUtils.<ResponseBean<List<BannerBean>>>applySchedulers())
-                .subscribe(new DefaultObserver<ResponseBean<List<BannerBean>>>(mView) {
+                .subscribe(new DefaultObserver<ResponseBean<List<BannerBean>>>(getmView()) {
                     @Override
                     protected void doOnNext(ResponseBean<List<BannerBean>> listResponseBean) {
-                        mView.loadBanner(listResponseBean.getData());
+                        getmView().loadBanner(listResponseBean.getData());
                     }
                 });
     }

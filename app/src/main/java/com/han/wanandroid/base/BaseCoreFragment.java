@@ -40,8 +40,8 @@ public abstract class BaseCoreFragment<T extends BasePresenter> extends BaseRxFr
         if (rootView == null) {
             rootView = inflater.inflate(this.getLayoutId(), container, false);
         }
-        activity=getActivity();
-        context=getContext();
+        activity = getActivity();
+        context = getContext();
         TAG = this.getClass().getSimpleName();
         unbinder = ButterKnife.bind(this, rootView);
         mPresenter = loadPresenter();
@@ -96,6 +96,9 @@ public abstract class BaseCoreFragment<T extends BasePresenter> extends BaseRxFr
     public void onDestroyView() {
         if (null != unbinder) {
             unbinder.unbind();
+        }
+        if (null != mPresenter) {
+            mPresenter.dettachView();
         }
         super.onDestroyView();
     }

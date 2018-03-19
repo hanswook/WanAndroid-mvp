@@ -7,7 +7,7 @@ package com.han.wanandroid.base;
 
 public abstract class BasePresenter<T extends IBaseView> {
 
-    protected T mView;
+    private T mView;
     protected String TAG;
 
     protected void attachView(T mView) {
@@ -18,6 +18,14 @@ public abstract class BasePresenter<T extends IBaseView> {
     protected void dettachView() {
         mView = null;
 
+    }
+
+    protected boolean isViewAttached() {
+        return null != mView;
+    }
+
+    protected T getmView(){
+        return mView;
     }
 
 }

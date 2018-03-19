@@ -29,7 +29,7 @@ public class HomePresenter extends BasePresenter<IHomeView> {
         RetrofitManager.getInstance().create(WanApi.class)
                 .requestLogin(username, password)
                 .compose(RxUtils.<ResponseBean<UserBean>>applySchedulers())
-                .subscribe(new DefaultObserver<ResponseBean<UserBean>>(mView) {
+                .subscribe(new DefaultObserver<ResponseBean<UserBean>>(getmView()) {
                     @Override
                     protected void doOnNext(ResponseBean<UserBean> userBean) {
                         LogUtils.e(TAG, "userBean:" + userBean.toString());

@@ -26,13 +26,13 @@ public class ArticlePresenter extends BasePresenter<IArticleView> {
         RetrofitManager.getInstance().create(WanApi.class)
                 .getTreeList()
                 .compose(RxUtils.<ResponseBean<List<TreeBean<TreeBean>>>>applySchedulers())
-                .subscribe(new DefaultObserver<ResponseBean<List<TreeBean<TreeBean>>>>(mView) {
+                .subscribe(new DefaultObserver<ResponseBean<List<TreeBean<TreeBean>>>>(getmView()) {
                     @Override
                     protected void doOnNext(ResponseBean<List<TreeBean<TreeBean>>> listResponseBean) {
                         if (null == listResponseBean || listResponseBean.getErrorCode() < 0) {
                             return;
                         }
-                        mView.loadTabsData(listResponseBean.getData());
+                        getmView().loadTabsData(listResponseBean.getData());
                     }
                 });
     }
@@ -42,14 +42,14 @@ public class ArticlePresenter extends BasePresenter<IArticleView> {
         RetrofitManager.getInstance().create(WanApi.class)
                 .getTreeDetailList(0, treeId)
                 .compose(RxUtils.<ResponseBean<DataBean<ArticleBean>>>applySchedulers())
-                .subscribe(new DefaultObserver<ResponseBean<DataBean<ArticleBean>>>(mView) {
+                .subscribe(new DefaultObserver<ResponseBean<DataBean<ArticleBean>>>(getmView()) {
                     @Override
                     protected void doOnNext(ResponseBean<DataBean<ArticleBean>> dataBeanResponseBean) {
 
                         if (ObjectUtils.isEmpty(dataBeanResponseBean)) {
                             return;
                         }
-                        mView.loadRecyclerData(dataBeanResponseBean.getData().getDatas());
+                        getmView().loadRecyclerData(dataBeanResponseBean.getData().getDatas());
 
                     }
                 });

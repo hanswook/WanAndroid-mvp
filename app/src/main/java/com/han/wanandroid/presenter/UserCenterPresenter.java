@@ -14,18 +14,18 @@ public class UserCenterPresenter extends BasePresenter<IUserCenterView> {
 
     public void clickLogin() {
         if (Constant.isLogin) {
-            mView.showUserLoginStatus(true);
+            getmView().showUserLoginStatus(true);
         } else {
-            mView.toLoginPage();
+            getmView().toLoginPage();
         }
     }
 
     public void clickAbout() {
-        mView.toAboutMePage();
+        getmView().toAboutMePage();
     }
 
     public void clickCollection() {
-        mView.toCollectionPage();
+        getmView().toCollectionPage();
 
     }
 }
