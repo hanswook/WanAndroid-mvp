@@ -3,8 +3,6 @@ package com.han.wanandroid.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.han.wanandroid.utils.LogUtils;
-
 
 /**
  * Created by hans

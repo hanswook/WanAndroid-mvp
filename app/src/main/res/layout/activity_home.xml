@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.han.wanandroid.ui.activity.HomeActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="homeview"/>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/home_viewpager"
@@ -18,4 +13,11 @@
 
     </android.support.v4.view.ViewPager>
 
-</LinearLayout>
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="spinner_.json"
+        app:lottie_loop="true" />
+</FrameLayout>

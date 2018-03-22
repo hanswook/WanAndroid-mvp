@@ -14,8 +14,8 @@ import com.han.wanandroid.ui.activity.AboutActivity;
 import com.han.wanandroid.ui.activity.CollectiionActivity;
 import com.han.wanandroid.ui.activity.LoginActivity;
 import com.han.wanandroid.utils.Constant;
-import com.han.wanandroid.utils.LogUtils;
-import com.han.wanandroid.utils.SPUtils;
+import com.han.wanandroid.utils.baseutils.LogUtils;
+import com.han.wanandroid.utils.baseutils.SPUtils;
 import com.han.wanandroid.iview.IUserCenterView;
 
 import java.util.concurrent.TimeUnit;

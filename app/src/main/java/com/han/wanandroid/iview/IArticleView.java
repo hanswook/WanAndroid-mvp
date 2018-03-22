@@ -15,4 +15,5 @@ public interface IArticleView extends IBaseView{
 
     void loadTabsData(List<TreeBean<TreeBean>> data);
     void loadRecyclerData(List<ArticleBean> datas);
+    void showFlow(List<TreeBean> data);
 }

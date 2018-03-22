@@ -5,10 +5,9 @@ import android.content.Context;
 import android.widget.Toast;
 
 
-import com.han.wanandroid.base.BaseActivity;
 import com.han.wanandroid.base.IBaseView;
-import com.han.wanandroid.utils.LogUtils;
-import com.han.wanandroid.utils.NetWorkUtils;
+import com.han.wanandroid.utils.baseutils.LogUtils;
+import com.han.wanandroid.utils.baseutils.NetWorkUtils;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;

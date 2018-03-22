@@ -11,7 +11,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.han.wanandroid.R;
-import com.han.wanandroid.utils.DensityUtils;
+import com.han.wanandroid.utils.baseutils.DensityUtils;
 
 
 /**

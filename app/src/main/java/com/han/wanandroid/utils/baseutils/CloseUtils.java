@@ -1,4 +1,4 @@
-package com.han.wanandroid.utils;
+package com.han.wanandroid.utils.baseutils;
 
 import java.io.Closeable;
 import java.io.IOException;

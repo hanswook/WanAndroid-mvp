@@ -6,6 +6,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.han.wanandroid.R;
 
 
@@ -30,9 +31,7 @@ public class CustomProgressDialog extends Dialog {
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         //添加控件  执行帧动画
-        ImageView imageView = (ImageView) findViewById(R.id.loadingImageView);
-        AnimationDrawable animationDrawable = (AnimationDrawable) imageView.getBackground();
-        animationDrawable.start();
+//        LottieAnimationView imageView = (LottieAnimationView) findViewById(R.id.loadingImageView);
     }
 
     public void setMessage(String strMessage) {

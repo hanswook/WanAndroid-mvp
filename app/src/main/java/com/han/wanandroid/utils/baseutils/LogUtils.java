@@ -1,7 +1,9 @@
-package com.han.wanandroid.utils;
+package com.han.wanandroid.utils.baseutils;
 
 import android.content.Context;
 import android.util.Log;
+
+import com.han.wanandroid.utils.Constant;
 
 /**
  * description：

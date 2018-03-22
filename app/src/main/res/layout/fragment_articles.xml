@@ -25,14 +25,6 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <com.han.wanandroid.widget.FlowLayout
-            android:id="@+id/article_flow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/a88_gray"
-            android:visibility="invisible">
-
-        </com.han.wanandroid.widget.FlowLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/article_recycler"
@@ -40,5 +32,14 @@
             android:layout_height="match_parent">
 
         </android.support.v7.widget.RecyclerView>
+
+        <com.han.wanandroid.widget.FlowLayout
+            android:id="@+id/article_flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/a88_gray"
+            android:visibility="gone">
+
+        </com.han.wanandroid.widget.FlowLayout>
     </FrameLayout>
 </android.support.design.widget.CoordinatorLayout>

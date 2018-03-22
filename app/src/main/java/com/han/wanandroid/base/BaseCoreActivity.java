@@ -14,7 +14,7 @@ import com.han.wanandroid.R;
 import com.han.wanandroid.tools.CustomDialog;
 import com.han.wanandroid.tools.CustomProgressDialog;
 import com.han.wanandroid.tools.CustomProgressDialogHelper;
-import com.han.wanandroid.utils.ToastUtils;
+import com.han.wanandroid.utils.baseutils.ToastUtils;
 
 /**
  * Created by hans

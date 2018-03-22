@@ -1,13 +1,11 @@
 package com.han.wanandroid.ui.activity;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MotionEvent;
 
 import com.han.wanandroid.R;
 import com.han.wanandroid.base.BaseActivity;
 import com.han.wanandroid.base.BasePresenter;
-import com.han.wanandroid.utils.LogUtils;
+import com.han.wanandroid.utils.baseutils.LogUtils;
 
 public class AboutActivity extends BaseActivity {
 

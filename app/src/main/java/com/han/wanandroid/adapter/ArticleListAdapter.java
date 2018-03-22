@@ -35,4 +35,9 @@ public class ArticleListAdapter extends BaseQuickAdapter<ArticleBean, BaseViewHo
             helper.setText(R.id.recommend_item_text_collect, mContext.getResources().getString(R.string.ic_collect_nor));
         }
     }
+
+    @Override
+    public void setOnItemClickListener(@Nullable OnItemClickListener listener) {
+        super.setOnItemClickListener(listener);
+    }
 }

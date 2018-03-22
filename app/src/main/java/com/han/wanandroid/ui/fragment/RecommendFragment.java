@@ -4,10 +4,9 @@ package com.han.wanandroid.ui.fragment;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.han.wanandroid.R;
@@ -16,12 +15,12 @@ import com.han.wanandroid.base.BaseLazyFragment;
 import com.han.wanandroid.model.pojo.ArticleBean;
 import com.han.wanandroid.model.pojo.BannerBean;
 import com.han.wanandroid.presenter.RecommendPresenter;
-import com.han.wanandroid.utils.DensityUtils;
-import com.han.wanandroid.utils.LogUtils;
+import com.han.wanandroid.utils.OpenWebHelper;
+import com.han.wanandroid.utils.baseutils.DensityUtils;
+import com.han.wanandroid.utils.baseutils.LogUtils;
 import com.han.wanandroid.iview.IRecommendView;
-import com.han.wanandroid.utils.ToastUtils;
+import com.han.wanandroid.utils.baseutils.ToastUtils;
 import com.han.wanandroid.utils.image.GlideApp;
-import com.han.wanandroid.widget.FlowLayout;
 import com.han.widget.simplebanner.ImageLoader;
 import com.han.widget.simplebanner.OnItemClickListener;
 import com.han.widget.simplebanner.SimpleBanner;
@@ -42,6 +41,8 @@ public class RecommendFragment extends BaseLazyFragment<RecommendPresenter> impl
     private ArticleListAdapter articleListAdapter;
     private int pageIndex = 0;
     private SimpleBanner simpleBanner;
+    private List<ArticleBean> articleDatas;
+    private List<BannerBean> bannerDatas;
 
     public RecommendFragment() {
     }
@@ -60,6 +61,8 @@ public class RecommendFragment extends BaseLazyFragment<RecommendPresenter> impl
 
     @Override
     protected void fetchData() {
+        articleDatas = new ArrayList<>();
+        bannerDatas = new ArrayList<>();
         initRecycler();
         initBannerView();
         mPresenter.getBannerData();
@@ -79,6 +82,7 @@ public class RecommendFragment extends BaseLazyFragment<RecommendPresenter> impl
             @Override
             public void onItemClick(int i) {
                 ToastUtils.show("i:" + i);
+                OpenWebHelper.openWeb(context, bannerDatas.get(i).getUrl());
             }
         });
     }
@@ -90,7 +94,7 @@ public class RecommendFragment extends BaseLazyFragment<RecommendPresenter> impl
     }
 
     private void initRecycler() {
-        articleListAdapter = new ArticleListAdapter(R.layout.recommend_recycler_item_layout, null);
+        articleListAdapter = new ArticleListAdapter(R.layout.recommend_recycler_item_layout, articleDatas);
         recommendRecycler.setAdapter(articleListAdapter);
         recommendRecycler.setLayoutManager(new LinearLayoutManager(context));
         mPresenter.getData(pageIndex);
@@ -101,6 +105,13 @@ public class RecommendFragment extends BaseLazyFragment<RecommendPresenter> impl
                 mPresenter.getData(pageIndex);
             }
         }, recommendRecycler);
+        articleListAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                OpenWebHelper.openWeb(context, articleDatas.get(position).getLink());
+
+            }
+        });
 
     }
 
@@ -115,6 +126,7 @@ public class RecommendFragment extends BaseLazyFragment<RecommendPresenter> impl
 
     @Override
     public void loadBanner(List<BannerBean> data) {
+        bannerDatas = data;
         LogUtils.e(TAG, "loadBanner data:" + data.size());
         List<String> imageUrlList = new ArrayList<>();
         List<String> titleList = new ArrayList<>();

@@ -3,7 +3,7 @@ package com.han.wanandroid.net;
 
 import com.google.gson.JsonParseException;
 import com.han.wanandroid.base.IBaseView;
-import com.han.wanandroid.utils.LogUtils;
+import com.han.wanandroid.utils.baseutils.LogUtils;
 
 import org.json.JSONException;
 

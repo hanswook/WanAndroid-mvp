@@ -4,9 +4,9 @@ import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
 
-import com.han.wanandroid.utils.CrashUtils;
-import com.han.wanandroid.utils.SPUtils;
-import com.han.wanandroid.utils.Utils;
+import com.han.wanandroid.utils.baseutils.CrashUtils;
+import com.han.wanandroid.utils.baseutils.SPUtils;
+import com.han.wanandroid.utils.baseutils.Utils;
 import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.crashreport.CrashReport;
 

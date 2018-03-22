@@ -1,4 +1,4 @@
-package com.han.wanandroid.utils;
+package com.han.wanandroid.utils.baseutils;
 
 import android.annotation.TargetApi;
 import android.content.Context;

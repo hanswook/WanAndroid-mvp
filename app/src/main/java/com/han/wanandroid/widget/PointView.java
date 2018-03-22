@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.han.wanandroid.R;
-import com.han.wanandroid.utils.LogUtils;
+import com.han.wanandroid.utils.baseutils.LogUtils;
 
 /**
  * Created by hans

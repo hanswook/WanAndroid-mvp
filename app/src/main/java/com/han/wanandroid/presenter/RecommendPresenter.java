@@ -8,8 +8,8 @@ import com.han.wanandroid.model.pojo.ResponseBean;
 import com.han.wanandroid.net.DefaultObserver;
 import com.han.wanandroid.net.RetrofitManager;
 import com.han.wanandroid.net.WanApi;
-import com.han.wanandroid.utils.LogUtils;
-import com.han.wanandroid.utils.RxUtils;
+import com.han.wanandroid.utils.baseutils.LogUtils;
+import com.han.wanandroid.utils.baseutils.RxUtils;
 import com.han.wanandroid.iview.IRecommendView;
 
 import java.util.List;

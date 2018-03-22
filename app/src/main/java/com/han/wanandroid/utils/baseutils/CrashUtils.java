@@ -1,4 +1,4 @@
-package com.han.wanandroid.utils;
+package com.han.wanandroid.utils.baseutils;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;

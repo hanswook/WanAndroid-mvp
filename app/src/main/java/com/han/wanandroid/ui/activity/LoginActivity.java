@@ -1,8 +1,5 @@
 package com.han.wanandroid.ui.activity;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,13 +13,12 @@ import com.han.wanandroid.net.DefaultObserver;
 import com.han.wanandroid.net.RetrofitManager;
 import com.han.wanandroid.net.WanApi;
 import com.han.wanandroid.utils.Constant;
-import com.han.wanandroid.utils.LogUtils;
-import com.han.wanandroid.utils.RxUtils;
-import com.han.wanandroid.utils.SPUtils;
-import com.han.wanandroid.utils.ToastUtils;
+import com.han.wanandroid.utils.baseutils.LogUtils;
+import com.han.wanandroid.utils.baseutils.RxUtils;
+import com.han.wanandroid.utils.baseutils.SPUtils;
+import com.han.wanandroid.utils.baseutils.ToastUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class LoginActivity extends BaseActivity {
 

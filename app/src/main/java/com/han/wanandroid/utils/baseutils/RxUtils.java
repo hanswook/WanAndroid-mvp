@@ -1,4 +1,4 @@
-package com.han.wanandroid.utils;
+package com.han.wanandroid.utils.baseutils;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;

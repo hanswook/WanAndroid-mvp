@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.han.wanandroid.utils.LogUtils;
+import com.han.wanandroid.utils.baseutils.LogUtils;
 
 /**
  * Created by hans

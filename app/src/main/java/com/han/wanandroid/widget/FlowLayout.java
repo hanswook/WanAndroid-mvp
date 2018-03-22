@@ -97,7 +97,6 @@ public class FlowLayout extends ViewGroup {
 
             int childWidth = child.getMeasuredWidth();
             int childHeight = child.getMeasuredHeight();
-
             if (lineWidth + lp.leftMargin + lp.rightMargin + childWidth > width) {
                 childViews.add(lineViews);
                 lineViews = new ArrayList<>();
@@ -149,6 +148,7 @@ public class FlowLayout extends ViewGroup {
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         return new MarginLayoutParams(getContext(), attrs);
     }
+
 
     @Override
     protected LayoutParams generateDefaultLayoutParams() {

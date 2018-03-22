@@ -2,8 +2,8 @@ package com.han.wanandroid.net;
 
 
 import com.han.wanandroid.utils.Constant;
-import com.han.wanandroid.utils.LogUtils;
-import com.han.wanandroid.utils.SPUtils;
+import com.han.wanandroid.utils.baseutils.LogUtils;
+import com.han.wanandroid.utils.baseutils.SPUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;

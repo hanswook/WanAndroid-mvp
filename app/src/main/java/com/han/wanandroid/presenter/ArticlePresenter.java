@@ -8,9 +8,9 @@ import com.han.wanandroid.model.pojo.TreeBean;
 import com.han.wanandroid.net.DefaultObserver;
 import com.han.wanandroid.net.RetrofitManager;
 import com.han.wanandroid.net.WanApi;
-import com.han.wanandroid.utils.LogUtils;
-import com.han.wanandroid.utils.ObjectUtils;
-import com.han.wanandroid.utils.RxUtils;
+import com.han.wanandroid.utils.baseutils.LogUtils;
+import com.han.wanandroid.utils.baseutils.ObjectUtils;
+import com.han.wanandroid.utils.baseutils.RxUtils;
 import com.han.wanandroid.iview.IArticleView;
 
 import java.util.List;
@@ -22,7 +22,11 @@ import java.util.List;
 
 public class ArticlePresenter extends BasePresenter<IArticleView> {
 
-    public void getTabData(){
+    private List<TreeBean<TreeBean>> tabDatas;
+
+
+
+    public void getTabData() {
         RetrofitManager.getInstance().create(WanApi.class)
                 .getTreeList()
                 .compose(RxUtils.<ResponseBean<List<TreeBean<TreeBean>>>>applySchedulers())
@@ -32,13 +36,14 @@ public class ArticlePresenter extends BasePresenter<IArticleView> {
                         if (null == listResponseBean || listResponseBean.getErrorCode() < 0) {
                             return;
                         }
+                        tabDatas = listResponseBean.getData();
                         getmView().loadTabsData(listResponseBean.getData());
                     }
                 });
     }
 
-    public void getRecyclerData(int treeId){
-        LogUtils.e(TAG,"treeId:"+treeId);
+    public void getRecyclerData(int treeId) {
+        LogUtils.e(TAG, "treeId:" + treeId);
         RetrofitManager.getInstance().create(WanApi.class)
                 .getTreeDetailList(0, treeId)
                 .compose(RxUtils.<ResponseBean<DataBean<ArticleBean>>>applySchedulers())
@@ -54,4 +59,8 @@ public class ArticlePresenter extends BasePresenter<IArticleView> {
                     }
                 });
     }
+
+
+
+
 }
